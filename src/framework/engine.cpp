@@ -105,7 +105,7 @@ void Engine::processInput() {
     if(screen == play && keys[GLFW_KEY_LEFT] && spawnButton->getPosX() >= 0){
         spawnButton->moveX(-1);
     }
-    if(screen == play && keys[GLFW_KEY_RIGHT && spawnButton->getPosX() <= 800]){
+    if(screen == play && keys[GLFW_KEY_RIGHT] && spawnButton->getPosX() <= 800){
         spawnButton->moveX(1);
     }
     // TODO: Make sure the spawnButton cannot go off the screen
