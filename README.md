@@ -1,31 +1,8 @@
-# Confetti Button
+# Confetti Button Graphics
+For this Project I used C++ graphics with classes to get a button to react to mouse and keyboard activity.
+Most of the code was provided by my professor at UVM in CS 2300 - Advanced Programming. The parts of the code that I created are under the TODO methods. The parts of the code that I modified include:
+- Rect.cpp
+- Shape.cpp
+- Engine.cpp
+In Rect.cpp, I created the vertices in the Rect::initVectors() method To render a rectangle we use triangles and the four corners the create the shape. In Shape.cpp, I modified the Shape::isOverlapping method to determine if a shape is overlapping. A shape is overlapping a point if the point is within the shape's bounding box. To do this the point must be less than getRight(), more than getLeft(), less than getTop(), and more than getBottom(). In Engine.cpp, in the processInput() method I first modified the code so that if the user presses s while in the stat screen, the screen will change to the play state. I did this by using the index of keys GFLW_KEY_S. Next I moved the spawn button using the arrow keys. I did this by using the index of the up, down, left, and right keys and then moving in the X or Y direction, if the button was within the width and height of the screen. Next I rendered the spawn button so that if the button is pressed the color chenges to red and if it is not pressed, stays blue. Next I rendered the confetti by clicking the spawn button. In Engin::render method, I called setUniforms to draw the spawn button and all of the confetti peices. The Confetti was drawn first to make sure the Button appeared on top. In the spawnConfetti method, I made each peiceof confetti a different size by determining a random number and then rendering a rectangle with that number as the height and width, and also a random color. After 100 confetti peices are rendered, the program ends and prints the message "You win". 
 
-Hopefully you have something to celebrate, because the confetti is coming!
-
-For this project, you will use C++ graphics with classes to get a button to react to mouse and keyboard activity.
-
-You may work individually or with a partner of your choosing.
-
-## Setup
-
-Use this Guided Project template to create a new repository (see [GitHub-with-CLion](https://github.com/uvmcs2300f2023/GitHub-with-CLion) repo for directions).
-**Your repository must be named with the convention: Confetti-Button-netid**, where netid is your UVM NetID username.
-* If you are collaborating, the format is Confetti-Button-netid1-netid2. Have one partner create the repository and give the other partner access on GitHub: on the repository page, go to the Settings tab, choose Manage Access, and add the person with their GitHub username.
-
-Remember to commit and push frequently.
-
-# Requirements
-
-1. Read through the header and .cpp files for Shape and Rect, inside the src/shapes folder.
-1. Implement the methods in Shape.cpp and Rect.cpp that have TODO comments.
-1. Read through engine.cpp in src/framework.
-1. Implement the TODO parts of engine.cpp.
-
-## Grading
-
-If you are collaborating, both partners have to submit the project.
-
-### Grading Rubric
-- [ ] (2 pts) Complete TODOs in rect.cpp
-- [ ] (2 pts) Complete TODO in shape.cpp
-- [ ] (16 pts) Complete all TODOs in engine.cpp.
